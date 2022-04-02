@@ -1,0 +1,23 @@
+{
+  "name": "svenska-ord.txt",
+  "version": "1.0.0",
+  "description": "Helt enkelt en textfil med ca 120 000 svenska ord från SAOL.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erixun/svenska-ord.txt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Erixun/svenska-ord.txt/issues"
+  },
+  "homepage": "https://github.com/Erixun/svenska-ord.txt#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.3"
+  }
+}
