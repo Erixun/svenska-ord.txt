@@ -1,17 +1,27 @@
-const jsonData = require("./svenska-ord.json");
+const words = require("../json/svenska-ord-inflections.json");
 const { shuffle } = require("./shuffle.js");
 fs = require("fs");
 
-const filteredJsonData = jsonData
-  .filter(
-    (word) => word.length === 6 && !word.includes("-") && !word.includes(" ")
-  )
-  .map((word) => word.toLowerCase());
+const parse = (words, length) => {
+  const wordsFiltered = words.filter((word) => word.length === length);
 
+  fs.writeFile(
+    `./json/words${length}Letters.json`,
+    JSON.stringify(wordsFiltered),
+    function (err) {
+      if (err) return console.log(err);
+    }
+  );
 
-shuffle(filteredJsonData);
+  shuffle(wordsFiltered);
 
-const stringifiedJsonData = JSON.stringify(filteredJsonData);
-fs.writeFile("sixLettersShuffled.json", stringifiedJsonData, function (err) {
-  if (err) return console.log(err);
-});
+  fs.writeFile(
+    `./json/words${length}LettersShuffled.json`,
+    JSON.stringify(wordsFiltered),
+    function (err) {
+      if (err) return console.log(err);
+    }
+  );
+};
+
+parse(words, 6);
