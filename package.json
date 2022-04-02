@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Erixun/svenska-ord.txt#readme",
   "dependencies": {
-    "node-fetch": "^3.2.3"
+    "cheerio": "^1.0.0-rc.10",
+    "node-fetch": "^2.6.7",
+    "throttled-queue": "^2.1.2"
   }
 }
